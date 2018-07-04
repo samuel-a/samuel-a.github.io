@@ -160,16 +160,22 @@ let oldPlaneX;
 document.addEventListener('keydown', function (event) {
 
     switch (event.key) {
+        case "w":
+        case "W":
         case "ArrowUp":
             if (mapLayout[Math.floor(posY)][Math.floor((posX) + dirX * movSpeed)] == 0) posX += dirX * movSpeed;
             if (mapLayout[Math.floor((posY) + dirY * movSpeed)][Math.floor(posX)] == 0) posY += dirY * movSpeed;
             break;
 
+        case "s":
+        case "S":
         case "ArrowDown":
             if (mapLayout[Math.floor(posY)][Math.floor((posX) - dirX * movSpeed)] == 0) posX -= dirX * movSpeed;
             if (mapLayout[Math.floor((posY) - dirY * movSpeed)][Math.floor(posX)] == 0) posY -= dirY * movSpeed;
             break;
 
+        case "a":
+        case "A":    
         case "ArrowLeft":
             oldDirX = dirX;
             dirX = dirX * Math.cos(rotSpeed) - dirY * Math.sin(rotSpeed);
@@ -179,6 +185,8 @@ document.addEventListener('keydown', function (event) {
             planeY = oldPlaneX * Math.sin(rotSpeed) + planeY * Math.cos(rotSpeed);
             break;
 
+        case "d":
+        case "D":
         case "ArrowRight":
             oldDirX = dirX;
             dirX = dirX * Math.cos(-rotSpeed) - dirY * Math.sin(-rotSpeed);
